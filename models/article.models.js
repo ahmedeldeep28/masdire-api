@@ -4,7 +4,7 @@ const articleSchema = mongoose.Schema({
     title: String,
     url: String,
     keywords: String,
-    descraption: String,
+    description: String,
     timestamp: Number,
     visits: {
         default: 0,
@@ -112,7 +112,6 @@ exports.addCountVisit = async (url) => {
 
 }
 
-
 //Get the articles with the most visits 
 exports.getArticlesCountVisit = async () => {
     try {
@@ -156,7 +155,6 @@ exports.getArticlesNomination = async () => {
 // Search for the article you were searching for
 exports.serachArticle = async (query) => {
     let limit = 10;
-    console.log(query)
     var regex = new RegExp(query.term);  // 'i' makes it case insensitive
     try {
         await mongoose.connect(DB_URL)

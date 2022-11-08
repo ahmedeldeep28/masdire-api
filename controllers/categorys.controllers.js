@@ -18,7 +18,6 @@ exports.getAllcategorys = async (req, res, next) => {
 
 exports.getCategoryByName = async (req, res, next) => {
     let { name } = req.params;
-
     try {
         let [category] = await categorysModles.getCategoryByName(name);
         res.status(200).json({
@@ -35,7 +34,6 @@ exports.getCategoryByName = async (req, res, next) => {
 
 
 exports.addNewCategory = async (req, res, next) => {
-    console.log(req.body);
     try {
         let date = new Date();
         let data = {
