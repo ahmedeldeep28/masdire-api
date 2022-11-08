@@ -138,7 +138,7 @@ exports.postArticle = async (req, res, next) => {
       title: req.body.title,
       url: slugify(req.body.url),
       keywords: req.body.keywords,
-      descraption: req.body.descraption,
+      description: req.body.description,
       timestamp: Date.now(),
       type: req.body.type,
       category: req.body.category,
