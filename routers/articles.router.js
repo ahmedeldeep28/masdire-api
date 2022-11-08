@@ -1,7 +1,6 @@
 const router = require("express").Router();
-const bodyparser = require('body-parser').urlencoded({ extended: true })
-const multer = require("multer");
 const articlesController = require("../controllers/articles.controllers");
+const multer = require("multer");
 
 
 // user router
@@ -26,11 +25,11 @@ const upload = multer({
 });
 
 // dashbord router
-router.post("/article/create", bodyparser, upload.single("image"), articlesController.postArticle);
+router.post("/article/create",  upload.single("image"), articlesController.postArticle);
 router.get("/articles", articlesController.getArticlesPublic);
-router.post("/article/update", bodyparser, upload.single("image"), articlesController.postUpdateArticle);
-router.delete("/article/:articleId", bodyparser, articlesController.deletArticle);
-router.post("/article/public", bodyparser, articlesController.postUpdatePublic);
-router.post("/article/nomination", bodyparser, articlesController.postUpdateNomination);
+router.post("/article/update", upload.single("image"), articlesController.postUpdateArticle);
+router.delete("/article/:articleId", articlesController.deletArticle);
+router.post("/article/public", articlesController.postUpdatePublic);
+router.post("/article/nomination", articlesController.postUpdateNomination);
 
 module.exports = router;

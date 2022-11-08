@@ -12,7 +12,7 @@ exports.sendMessage = async (req, res, next) => {
     try {
         const result = await contactModles.addNewMessage(data)
         res.status(200).json({
-            data: result
+            result,
         })
     } catch (error) {
         res.status(404).json({

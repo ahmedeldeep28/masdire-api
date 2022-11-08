@@ -13,11 +13,12 @@ exports.addNewSubscribe = async (data) => {
     try {
         await mongoose.connect(DB_URL);
         const findSubscribeEmail = await subscribe.find({ email: data.email });
-        if (findSubscribeEmail) {
-            throw "هذا البريد مشترك بالفعل" 
-        } else {
+        console.log(findSubscribeEmail);
+        if (findSubscribeEmail.length === 0) {
             let result = await subscribe.create(data);
             return result;
+        } else {
+            throw "هذا البريد مشترك بالفعل" 
         }
     } catch (error) {
         throw error

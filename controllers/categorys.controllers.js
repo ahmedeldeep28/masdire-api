@@ -35,6 +35,7 @@ exports.getCategoryByName = async (req, res, next) => {
 
 
 exports.addNewCategory = async (req, res, next) => {
+    console.log(req.body);
     try {
         let date = new Date();
         let data = {

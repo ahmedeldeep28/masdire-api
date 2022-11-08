@@ -1,5 +1,4 @@
 const router = require("express").Router()
-const bodyparser = require("body-parser").urlencoded({ extended: true});
 const categorysController = require("../controllers/categorys.controllers")
 const multer = require("multer");
 
@@ -9,7 +8,6 @@ router.get("/category/:name", categorysController.getCategoryByName);
 
 
 // dashbord category router
-
 const upload = multer({
     storage: multer.diskStorage({
         destination: (req, file, cb) => {
@@ -22,10 +20,10 @@ const upload = multer({
 });
 
 
-router.post("/category/create", bodyparser ,upload.single("image"),categorysController.addNewCategory)
+router.post("/category/create", upload.single("image"), categorysController.addNewCategory)
 
 
-router.delete("/category/:categoryId",bodyparser, categorysController.deleteCategoryById);
+router.delete("/category/:categoryId", categorysController.deleteCategoryById);
 
 
 
