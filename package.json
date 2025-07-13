@@ -1,12 +1,12 @@
 {
-  "name": "msader",
+  "name": "masadir",
   "version": "1.0.0",
-  "description": "project masdire",
+  "description": "This is the backend API for the masdire project, built with Node.js and Express.",
   "main": "app.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
+  "author": "ahmed eldeep",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
