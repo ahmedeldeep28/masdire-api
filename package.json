@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This is the backend API for the masdire project, built with Node.js and Express.",
   "main": "app.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "node index.js"
   },
